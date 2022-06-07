@@ -21,7 +21,7 @@ export default [
         name,
         file: `${outDir}/${fileName}.min.js`,
         format: 'iife',
-        plugin: [
+        plugins: [
           pluginTerser()
         ],
       },
