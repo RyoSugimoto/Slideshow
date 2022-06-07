@@ -1,0 +1,81 @@
+:root {
+  --slideshow-page-font-family: Arial, Helvetica, sans-serif;
+  --slideshow-page-font-size: .5rem;
+  --slideshow-page-font-weight: 500;
+  --slideshow-page-color: #000;
+  --slideshow-page-height: 2rem;
+  --slideshow-page-width: 2rem;
+  --slideshow-page-graph-color: #000;
+  --slideshow-page-graph-holder-color: rgba(0, 0, 0, .125);
+  --slideshow-page-graph-width: 1px;
+  --slideshow-item-transition: opacity .5s linear 0s;
+}
+
+[data-slideshow] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+}
+
+[data-slideshow-item] {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: opacity .5s linear 0s;
+  transition: var(--slideshow-item-transition);
+}
+[data-slideshow-item].is-current {
+  opacity: 1;
+}
+
+[data-slideshow-page] {
+  align-items: center;
+  color: #000;
+  color: var(--slideshow-page-color);
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--slideshow-page-font-family);
+  font-size: .5rem;
+  font-size: var(--slideshow-page-font-size);
+  font-weight: 500;
+  font-weight: var(--slideshow-page-font-weight);
+  line-height: 1;
+  justify-content: center;
+  height: 2rem;
+  height: var(--slideshow-page-height);
+  width: 2rem;
+  width: var(--slideshow-page-width);
+  position: relative;
+}
+[data-slideshow-page] svg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+[data-slideshow-page-graph] {
+  stroke-dashoffset: calc(var(--circumference) * var(--progress));
+  stroke-width: 1px;
+  stroke-width: var(--slideshow-page-graph-width);
+  stroke: #000;
+  stroke: var(--slideshow-page-graph-color);
+  fill: transparent;
+  stroke-dasharray: var(--circumference);
+}
+
+[data-slideshow-page-graph-holder] {
+  stroke-width: 1px;
+  stroke-width: var(--slideshow-page-graph-width);
+  stroke: rgba(0, 0, 0, .125);
+  stroke: var(--slideshow-page-graph-holder-color);
+  fill: transparent;
+}
+
+/*# sourceMappingURL=slideshow.css.map */
