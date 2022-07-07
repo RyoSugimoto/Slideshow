@@ -19,6 +19,8 @@ body {
   margin: 0 auto;
   max-width: 1024px;
   position: relative;
+
+  --slideshow-page-size: 2.5rem;
 }
 
 .slideshow__pagination {

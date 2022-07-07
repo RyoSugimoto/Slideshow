@@ -3,8 +3,7 @@
   --slideshow-page-font-size: .5rem;
   --slideshow-page-font-weight: 500;
   --slideshow-page-color: #000;
-  --slideshow-page-height: 2rem;
-  --slideshow-page-width: 2rem;
+  --slideshow-page-size: 2rem;
   --slideshow-page-graph-color: #000;
   --slideshow-page-graph-holder-color: rgba(0, 0, 0, .125);
   --slideshow-page-graph-width: 1px;
@@ -35,14 +34,15 @@
 [data-slideshow-page] {
   align-items: center;
   color: var(--slideshow-page-color);
+  cursor: pointer;
   display: flex;
   font-family: var(--slideshow-page-font-family);
   font-size: var(--slideshow-page-font-size);
   font-weight: var(--slideshow-page-font-weight);
   line-height: 1;
   justify-content: center;
-  height: var(--slideshow-page-height);
-  width: var(--slideshow-page-width);
+  height: var(--slideshow-page-size);
+  width: var(--slideshow-page-size);
   position: relative;
   svg {
     height: 100%;
