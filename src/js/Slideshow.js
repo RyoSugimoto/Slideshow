@@ -51,17 +51,23 @@ export default class Slideshow {
 
   createPagination(index) {
     const page = document.createElement('span')
+    // Circle
     page.insertAdjacentHTML('beforeend', pageGraph)
+    // Number
     page.insertAdjacentHTML('beforeend', index + 1)
     page.setAttribute('data-slideshow-page', '')
-    page.style.setProperty('--circumference', 48 * Math.PI)
+    page.style.setProperty('--circumference', 48 * Math.PI + 'px')
+    page.addEventListener('click', event => {
+      event.preventDefault()
+      this.changeSlide(index)
+    })
     this.pages.push(page)
   }
 
   start() {
-    this.startTime = new Date().getTime()
+    this.resetStartTime()
     requestAnimationFrame(() => {
-      this.step(this.options.duration)
+      this.step()
     })
   }
 
@@ -96,5 +102,14 @@ export default class Slideshow {
         page.style.setProperty('--progress', 1)
       }
     })
+  }
+
+  changeSlide(index) {
+    this.resetStartTime()
+    this.currentIndex = index
+  }
+
+  resetStartTime() {
+    this.startTime = new Date().getTime()
   }
 }
